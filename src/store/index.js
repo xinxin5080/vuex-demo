@@ -6,12 +6,16 @@ Vue.use(Vuex)
 
 // 1.0state用来暂存数据
 const state = {
-  sum: 0
+  sum: 0,
+  sum2: 10
 }
 // 2.0mutations中的函数用于修改state的数据
 const mutations = {
   addSum: (state) => {
     state.sum += 1
+  },
+  minusSum: (state) => {
+    state.sum -= 1
   },
   addSumN: (state, n) => {
     state.sum += n
@@ -23,6 +27,9 @@ const actions = {
   triggerAddSum: obj => {
     // 3.0通过obj中commit属性触发addSum
     obj.commit('addSum')
+  },
+  triggerAddSum2: obj => {
+    obj.commit('minusSum')
   },
   // 5.0也可以传参数
   triggerAddSumN: (obj, n) => {
