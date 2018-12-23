@@ -5,6 +5,8 @@ import App from './App'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/styles/index.scss'
+// 1.0引进vuex的容器sotre
+import store from '@/store'
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false
@@ -12,6 +14,8 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  // 注入
+  store,
   components: { App },
   template: '<App/>'
 })
